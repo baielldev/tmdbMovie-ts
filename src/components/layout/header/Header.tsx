@@ -4,8 +4,10 @@ import { Link, NavLink } from "react-router-dom";
 import { SearchOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import SearchPage from "../../pages/searchPage/SearchPage";
+
 const Header = () => {
   const [openSearch, setOpenSearch] = useState<boolean>(false);
+
   return (
     <header className={scss.header}>
       <div className="container">
@@ -31,6 +33,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+
       {openSearch && <SearchPage onClose={() => setOpenSearch(false)} />}
     </header>
   );

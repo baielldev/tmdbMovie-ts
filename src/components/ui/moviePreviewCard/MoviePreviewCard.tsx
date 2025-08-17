@@ -14,10 +14,9 @@ const MoviePreviewCard: FC<IProps> = ({ item, onClose, mediaType }) => {
   const safeRating = typeof rating === "number" ? rating.toFixed(1) : "N/A";
   const titleMovie = item.title || item.name;
   const dateMovie = item.release_date || item.first_air_date;
+
   const handleClick = () => {
-    if (onClose) {
-      onClose();
-    }
+    if (onClose) onClose();
   };
 
   return (
