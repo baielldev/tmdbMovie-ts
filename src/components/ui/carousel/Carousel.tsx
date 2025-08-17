@@ -8,10 +8,10 @@ import {
 
 interface IProps {
   data?: IMoviesResponse;
-  mediaType: "movie" | "tv";
+  mediaType?: "movie" | "tv";
 }
 
-const Carousel: FC<IProps> = ({ data, mediaType }) => {
+const Carousel: FC<IProps> = ({ data }) => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const [cardWidth, setCardWidth] = useState<number>(0);
 
@@ -75,7 +75,7 @@ const Carousel: FC<IProps> = ({ data, mediaType }) => {
           <div ref={carouselRef} className={scss.list}>
             {data?.results.map((item) => (
               <div key={item.id} className={scss.cardWrapper}>
-                <MoviesCard item={item} mediaType={mediaType} />
+                <MoviesCard item={item} mediaType="movie" />
               </div>
             ))}
           </div>
