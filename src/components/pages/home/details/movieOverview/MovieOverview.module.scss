@@ -1,0 +1,65 @@
+.movieOverview {
+  padding-block: 20px;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    .descr {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      h1 {
+        font-size: 50px;
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      }
+      p {
+        font-size: 18px;
+        color: #fff;
+        line-height: 1.5;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      }
+    }
+    .country {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      h1 {
+        font-size: 50px;
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      }
+      p {
+        font-size: 18px;
+        color: #fff;
+        line-height: 1.5;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      }
+    }
+    .genres {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      h1 {
+        font-size: 50px;
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      }
+      p {
+        font-size: 18px;
+        color: #fff;
+        line-height: 1.5;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}

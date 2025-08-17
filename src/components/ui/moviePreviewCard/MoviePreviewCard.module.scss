@@ -1,0 +1,60 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding-block: 30px;
+  height: auto;
+  overflow: hidden;
+
+  .card_list {
+    .card_box {
+      width: 215px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: relative;
+      img {
+        border-radius: 15px;
+        width: 100%;
+        max-width: 220px;
+        height: 320px;
+      }
+      .card_info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .card_title {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          span {
+            background: linear-gradient(270deg, #5200ff, #ba2afe);
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+          }
+
+          .movieTitle {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+          }
+        }
+
+        p {
+          font-size: 16px;
+          font-weight: 500;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

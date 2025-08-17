@@ -1,0 +1,38 @@
+.carousel {
+  width: 100%;
+  position: relative;
+  .carouselItem {
+    position: relative;
+    .list {
+      width: 100%;
+      max-width: 1280px;
+      display: flex;
+      align-items: center;
+      gap: 38px;
+      overflow-x: hidden;
+      position: relative;
+    }
+  }
+  .arrow {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 2.2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    background: linear-gradient(270deg, #5200ff, #ba2afe);
+    border-radius: 5px;
+
+    &.iconLeft {
+      left: -10px;
+    }
+
+    &.iconRight {
+      right: -10px;
+    }
+    &:hover {
+      color: #999;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.welcome {
+  height: 100vh;
+  width: 100%;
+
+  .card {
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.08), #0b0b0b);
+      padding: 60px;
+      .cardInfo {
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: flex-end;
+        align-items: flex-start;
+        position: relative;
+        height: 100%;
+        z-index: 1;
+
+        h1 {
+          color: #fff;
+          text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          font-size: 45px;
+          line-height: 1.2;
+        }
+        .genres {
+          color: #fff;
+          font-size: 18px;
+          text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        p {
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 16px;
+          line-height: 1.5;
+          text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .collection {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+          .spanRating {
+            background: linear-gradient(270deg, #5200ff, #ba2afe);
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 20px;
+          }
+          .date,
+          .country {
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            font-size: 18px;
+          }
+        }
+
+        .button {
+          padding-block: 25px;
+        }
+      }
+    }
+  }
+}

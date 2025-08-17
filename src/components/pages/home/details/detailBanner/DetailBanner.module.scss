@@ -1,0 +1,129 @@
+.detailBanner {
+  .bannerImg {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+
+    .bannerImage {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      padding-left: 350px;
+      position: relative;
+      z-index: 1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.099) 0%,
+        #0b0b0b 24.6%,
+        rgba(0, 0, 0, 0.671) 35%,
+        transparent 100%
+      );
+      z-index: 2;
+      pointer-events: none;
+    }
+  }
+
+  .content {
+    position: relative;
+    height: 100%;
+
+    .bannerInfo {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+      padding: 32px 24px;
+      z-index: 3;
+
+      .logo {
+        height: 120px;
+        width: auto;
+        object-fit: contain;
+        max-width: 100%;
+        display: block;
+      }
+
+      .logoText {
+        font-size: 60px;
+        font-weight: 600;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        color: #fff;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: 500;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        color: #fff;
+      }
+
+      p {
+        font-size: 20px;
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        margin: 0;
+      }
+
+      .bannerRating {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+
+        span {
+          background: linear-gradient(270deg, #5200ff, #ba2afe);
+          color: #fff;
+          padding: 6.4px 12.8px;
+          border-radius: 5px;
+          font-weight: bold;
+          font-size: 20px;
+          text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        p,
+        h1,
+        h2 {
+          font-size: 16px;
+          color: #ccc;
+          text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        h1,
+        h2 {
+          color: #fff;
+          font-weight: 500;
+        }
+      }
+      .button {
+        width: 150px;
+        height: 50px;
+        font-size: 20px;
+      }
+    }
+  }
+  .customModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    backdrop-filter: blur(6px);
+  }
+}
