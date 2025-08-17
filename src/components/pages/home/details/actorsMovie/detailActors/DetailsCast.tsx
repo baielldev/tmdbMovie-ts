@@ -4,14 +4,6 @@ import { useGetCastDetailsQuery } from "../../../../../../api/actors/detailsActo
 import { useGetCastMovieQuery } from "../../../../../../api/actors/detailsActor/movieActors";
 import notMovieImg from "../../../../../../assets/notMovieImg.png";
 
-interface ICastMovie {
-  id: number;
-  title: string;
-  poster_path: string | null;
-  release_date: string;
-  vote_average: number;
-}
-
 const DetailsCast = () => {
   const { id } = useParams<{ id: string }>();
 
@@ -27,7 +19,7 @@ const DetailsCast = () => {
           <div className={scss.castInfo}>
             <img
               src={`https://image.tmdb.org/t/p/w1920${castDetails?.profile_path}`}
-              alt={castDetails?.name}
+              alt=""
             />
             <div className={scss.castName}>
               <h1>{castDetails?.name}</h1>
@@ -40,16 +32,16 @@ const DetailsCast = () => {
               <h1>Участие в кино</h1>
             </div>
             <div className={scss.moviesList}>
-              {castMovie?.cast.map((item: ICastMovie) => (
-                <Link to={`/details/movie/${item.id}`} key={item.id}>
-                  <div className={scss.cardBox}>
+              {castMovie?.cast.map((item: any) => (
+                <Link to={`/details/${item.id}`}>
+                  <div key={item.id} className={scss.cardBox}>
                     <img
                       src={
                         item.poster_path
                           ? `https://image.tmdb.org/t/p/w1920${item.poster_path}`
                           : notMovieImg
                       }
-                      alt={item.title}
+                      alt=""
                     />
                     <div className={scss.cardTitle}>
                       <span>{item.vote_average.toFixed(1)}</span>

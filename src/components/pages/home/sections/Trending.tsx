@@ -7,7 +7,6 @@ import SkeletonPrewievCard from "../../../ui/skeleton/skeletonPrewievCard/Skelet
 const Trending = () => {
   const [switchDate, setSwitchDate] = useState<"day" | "week">("day");
   const { data: dataTrending, isLoading } = useGetTrendingQuery(switchDate);
-
   return (
     <div className={scss.carouselItem}>
       <div className="container">
@@ -33,9 +32,7 @@ const Trending = () => {
             ? Array.from({ length: 5 }).map((_, i) => (
                 <SkeletonPrewievCard key={i} />
               ))
-            : dataTrending && (
-                <CardCarousel data={dataTrending} mediaType="movie" />
-              )}
+            : dataTrending && <CardCarousel data={dataTrending} />}
         </div>
       </div>
     </div>

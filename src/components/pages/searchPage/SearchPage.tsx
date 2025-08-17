@@ -5,6 +5,7 @@ import { useGetSearchQuery } from "../../../api/search";
 import MoviePreviewCard from "../../ui/moviePreviewCard/MoviePreviewCard";
 
 interface IProps {
+  mediaType?: "movie" | "tv";
   onClose: () => void;
 }
 
@@ -18,10 +19,14 @@ const SearchPage: FC<IProps> = ({ onClose }) => {
 
   const { data, isPending } = useGetSearchQuery(value);
 
-  const handleClearSearch = () => setValue("");
+  const handleClearSearch = () => {
+    setValue("");
+  };
 
   const handleClose = () => {
-    setTimeout(() => onClose(), 100);
+    setTimeout(() => {
+      onClose();
+    }, 100);
   };
 
   useEffect(() => {
@@ -72,29 +77,31 @@ const SearchPage: FC<IProps> = ({ onClose }) => {
                   <p>Поиск...</p>
                 </div>
               )}
-
               {!isPending &&
                 Array.isArray(data?.results) &&
                 data.results.length === 0 && (
                   <p className={scss.notFound}>Ничего не найдено!</p>
                 )}
-
               {!isPending &&
                 Array.isArray(data?.results) &&
-                data.results.length > 0 &&
-                data.results
-                  .filter(
-                    (item) =>
-                      item.media_type === "movie" || item.media_type === "tv"
-                  )
-                  .map((item) => (
-                    <MoviePreviewCard
-                      key={item.id}
-                      item={item}
-                      mediaType={item.media_type}
-                      onClose={onClose}
-                    />
-                  ))}
+                data.results.length > 0 && (
+                  <>
+                    {data.results
+                      .filter(
+                        (item) =>
+                          item.media_type === "movie" ||
+                          item.media_type === "tv"
+                      )
+                      .map((item) => (
+                        <MoviePreviewCard
+                          key={item.id}
+                          item={item}
+                          mediaType={item.media_type}
+                          onClose={onClose}
+                        />
+                      ))}
+                  </>
+                )}
             </>
           )}
         </div>

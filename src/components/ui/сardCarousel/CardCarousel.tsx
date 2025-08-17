@@ -8,7 +8,7 @@ import MoviePreviewCard from "../moviePreviewCard/MoviePreviewCard";
 
 interface IProps {
   data?: IMoviesResponse;
-  mediaType: "movie" | "tv";
+  mediaType?: "movie" | "tv";
 }
 
 const CardCarousel: FC<IProps> = ({ data, mediaType }) => {
